@@ -19,12 +19,16 @@ public class SpringbootAzuresqlApplication {
 
     @PostMapping("/employee")
     public Employee addEmployee(@RequestBody Employee employee) {
+    	System.out.println("epmloyee::"+employee);
         return repository.save(employee);
     }
 
     @GetMapping("/employees")
     public List<Employee> getEmployees() {
-        return repository.findAll();
+    	
+    	List<Employee> listofEmp=repository.findAll();
+    	System.out.println("List of Employees :"+listofEmp);
+        return listofEmp;
     }
 
 
